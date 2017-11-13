@@ -13,7 +13,6 @@ $USERS_DATA_CONVERTED = "C:\PowerShell\Signature\users_infos_UNICODE.csv"
 
 $usernameAzure = Read-host "Enter AD Azure admin login "
 $passwordAzure = Read-host "Enter AD Azure admin password " -AsSecureString
-#$usernameAzure = "admin.delhaye@airbelgium.com"
 #$passwordAzure = "MYPASSWORD"|ConvertTo-SecureString -AsPlainText -Force
 
 $username = Read-host "Enter AD local admin login ( airbelgium\firstname.lastname ) "
@@ -31,6 +30,7 @@ $AzureCredential = new-object -typename System.Management.Automation.PSCredentia
 $credential = new-object -typename System.Management.Automation.PSCredential ` -argumentlist $username, $password
 
 write-Host 'Connecting to AD Azure and AD Local using credentials' -ForegroundColor Yellow
+
 
 Set-ExecutionPolicy RemoteSigned -force
 Import-Module ActiveDirectory
